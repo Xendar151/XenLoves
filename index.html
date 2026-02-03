@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffebee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        #gift-button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        #gift-button:hover { transform: scale(1.1); }
+        
+        /* The Pop-up Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 80%;
+            text-align: center;
+            animation: popIn 0.5s cubic-bezier(0.26, 0.53, 0.74, 1.48);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 { color: #e91e63; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button id="gift-button" onclick="showPopup()">🎁 Tap to Open Your Gift</button>
+</div>
+
+<div id="overlay" class="overlay">
+    <div class="popup">
+        <h1>Happy Advanced Valentine's Day! ❤️</h1>
+        <p>I hear what you’re saying, and it breaks my heart to know that I’ve caused you enough pain to make you feel like you have to protect yourself from me. I hate that I’m the reason you’ve had to put those walls up.
+I want you to know that even if you feel like you’ve walked away, I haven’t. I won't stop loving you just because things are hard or because we’re in this place right now. My love for you isn't something I can just switch off—it’s deeper than that.
+I’m not saying this to pressure you or to ignore how you feel. I respect your need to stay safe and not get hurt again. But I need you to know that in my heart, you’re still the person I choose. I’m going to use this time to reflect on everything and work on being someone who would never cause you that kind of hurt again.
+Whether we are talking or not, please know that I’m still in your corner, still caring about you, and still loving you from right here.I love you more than words can say. You are my favorite adventure.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script>
+    function showPopup() {
+        document.getElementById('overlay').style.display = 'flex';
+    }
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html> 
